@@ -1,5 +1,6 @@
 const API="https://que-me-llevo-api.berbel83.workers.dev", $=s=>document.querySelector(s);
 let analysis=null,answers={},items=[];
+let openCategories=new Set(), categoriesInitialized=false;
 
 // ======================================================
 // IMPORTAR VIAJE DESDE EL PLANAZO
@@ -492,6 +493,8 @@ function renderResult(o){
       : "";
 
   items=[];
+  openCategories.clear();
+  categoriesInitialized=false;
 
   (o.categories||[]).forEach(c=>
     (c.items||[]).forEach(i=>
@@ -525,34 +528,84 @@ function renderResult(o){
 function draw(){
   const cats=[...new Set(items.map(x=>x.cat))];
 
-  $("#lists").innerHTML=cats.map(c=>`
-    <section class="card">
-      <h3>${esc(c)}</h3>
-      ${items.filter(i=>i.cat===c).map(i=>`
-        <div class="item ${i.done?"done":""}">
-          <input type="checkbox"
-            data-c="${i.uid}"
-            ${i.done?"checked":""}>
-          <div>
-            <span class="priority ${i.priority||"recommended"}">
-              ${label(i.priority)}
-            </span>
-            <div class="name">${esc(i.name)}</div>
-            <div class="why">${esc(i.why||"")}</div>
-            ${i.product_candidate
-              ? `<a class="amazon"
-                  target="_blank"
-                  rel="nofollow sponsored"
-                  href="${amazon(i.name)}">
-                  🛒 Ver opciones en Amazon <span>(enlace pagado)</span>
-                </a>`
-              : ""}
+  if(!categoriesInitialized){
+    openCategories=new Set(
+      cats.filter((c,i)=>
+        i===0 || c==="Ropa" || c==="Niños"
+      )
+    );
+    categoriesInitialized=true;
+  }
+
+  const allOpen=
+    cats.length>0 &&
+    cats.every(c=>openCategories.has(c));
+
+  $("#lists").innerHTML=`
+    <div class="category-tools">
+      <span>${cats.length} categorías · ${items.length} artículos</span>
+      <button id="toggleCategories">
+        ${allOpen?"Plegar todo":"Ver todo"}
+      </button>
+    </div>
+    ${cats.map(c=>{
+      const catItems=items.filter(i=>i.cat===c);
+      const doneCount=catItems.filter(i=>i.done).length;
+
+      return `
+        <details class="card category-card"
+          data-category="${esc(c)}"
+          ${openCategories.has(c)?"open":""}>
+          <summary>
+            <span>${esc(c)}</span>
+            <small>${doneCount}/${catItems.length}</small>
+          </summary>
+          <div class="category-items">
+            ${catItems.map(i=>`
+              <div class="item ${i.done?"done":""}">
+                <input type="checkbox"
+                  aria-label="Marcar ${esc(i.name)}"
+                  data-c="${i.uid}"
+                  ${i.done?"checked":""}>
+                <div>
+                  <span class="priority ${i.priority||"recommended"}">
+                    ${label(i.priority)}
+                  </span>
+                  <div class="name">${esc(i.name)}</div>
+                  <div class="why">${esc(i.why||"")}</div>
+                  ${i.product_candidate
+                    ? `<a class="amazon"
+                        target="_blank"
+                        rel="nofollow sponsored"
+                        href="${amazon(i.name)}">
+                        🛒 Ver en Amazon <span>(enlace pagado)</span>
+                      </a>`
+                    : ""}
+                </div>
+                <button class="remove"
+                  aria-label="Quitar ${esc(i.name)}"
+                  data-r="${i.uid}">×</button>
+              </div>
+            `).join("")}
           </div>
-          <button class="remove" data-r="${i.uid}">×</button>
-        </div>
-      `).join("")}
-    </section>
-  `).join("");
+        </details>
+      `;
+    }).join("")}
+  `;
+
+  document.querySelectorAll(".category-card").forEach(x=>{
+    x.addEventListener("toggle",()=>{
+      const category=x.dataset.category;
+      if(x.open) openCategories.add(category);
+      else openCategories.delete(category);
+    });
+  });
+
+  $("#toggleCategories").onclick=()=>{
+    if(allOpen) openCategories.clear();
+    else cats.forEach(c=>openCategories.add(c));
+    draw();
+  };
 
   document.querySelectorAll("[data-c]").forEach(x=>{
     x.onchange=()=>{
