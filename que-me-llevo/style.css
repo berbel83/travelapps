@@ -1119,3 +1119,136 @@ footer{
     break-inside:avoid;
   }
 }
+
+
+/* =========================
+   LISTA COMPACTA Y PLEGABLE
+========================= */
+
+.category-tools{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:8px 4px 12px;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:750;
+}
+
+.category-tools button{
+  padding:8px 12px;
+  border-radius:12px;
+  background:#eee8e1;
+  color:var(--text);
+  font-size:12px;
+  font-weight:850;
+}
+
+#lists .category-card{
+  margin-bottom:10px;
+}
+
+.category-card summary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:17px 20px;
+  cursor:pointer;
+  list-style:none;
+  font-size:17px;
+  font-weight:850;
+}
+
+.category-card summary::-webkit-details-marker{
+  display:none;
+}
+
+.category-card summary:before{
+  content:"›";
+  color:var(--primary);
+  font-size:24px;
+  line-height:1;
+  transition:transform .18s ease;
+}
+
+.category-card[open] summary:before{
+  transform:rotate(90deg);
+}
+
+.category-card summary span{
+  flex:1;
+}
+
+.category-card summary small{
+  padding:5px 9px;
+  border-radius:999px;
+  background:var(--surface-soft);
+  color:var(--muted);
+  font-size:11px;
+}
+
+.category-card[open] summary{
+  border-bottom:1px solid var(--line);
+}
+
+.category-card .item{
+  padding:12px 18px;
+}
+
+.category-card .priority{
+  margin-bottom:4px;
+  padding:3px 7px;
+  font-size:8px;
+}
+
+.category-card .name{
+  font-size:14px;
+}
+
+.category-card .why{
+  margin-top:3px;
+  font-size:11.5px;
+  line-height:1.4;
+}
+
+.category-card .amazon{
+  margin-top:6px;
+  padding:5px 8px;
+  font-size:10px;
+}
+
+.category-card .amazon span{
+  opacity:.72;
+}
+
+@media(max-width:640px){
+  .category-card summary{
+    padding:15px 14px;
+  }
+
+  .category-card .item{
+    grid-template-columns:26px 1fr 22px;
+    gap:8px;
+    padding:11px 14px;
+  }
+
+  .category-card .why{
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+}
+
+@media print{
+  details.category-card:not([open]) > *:not(summary){
+    display:block!important;
+  }
+
+  .category-tools,
+  .category-card summary:before{
+    display:none!important;
+  }
+}
