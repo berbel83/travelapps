@@ -749,5 +749,40 @@ $("#importedEdit").onclick=()=>{
   );
 };
 
-// Iniciar integración con El Planazo
+// Compartir una invitación al viaje por WhatsApp
+$("#shareWhatsApp").onclick=()=>{
+  const trip=$("#trip").value.trim();
+  const sharedUrl=new URL(
+    "/que-me-llevo/",
+    "https://travelapps-es.vercel.app"
+  );
+
+  if(trip){
+    sharedUrl.searchParams.set("trip",trip);
+  }
+
+  const message=[
+    "He preparado la lista para nuestro viaje con ¿Qué me llevo? 🎒",
+    "Puedes abrirla y crear la tuya aquí:",
+    sharedUrl.toString()
+  ].join("\n");
+
+  window.open(
+    "https://wa.me/?text="+encodeURIComponent(message),
+    "_blank",
+    "noopener,noreferrer"
+  );
+};
+
+function initTripPrefill(){
+  const params=new URLSearchParams(window.location.search);
+  const trip=params.get("trip");
+
+  if(trip && !params.get("plan")){
+    $("#trip").value=trip.slice(0,2000);
+  }
+}
+
+// Iniciar integraciones
+initTripPrefill();
 initImportedPlan();
