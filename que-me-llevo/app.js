@@ -544,7 +544,7 @@ function draw(){
                   target="_blank"
                   rel="nofollow sponsored"
                   href="${amazon(i.name)}">
-                  🛒 Ver opciones en Amazon
+                  🛒 Ver opciones en Amazon <span>(enlace pagado)</span>
                 </a>`
               : ""}
           </div>
