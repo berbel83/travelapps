@@ -472,25 +472,30 @@ function renderResult(o){
   $("#title").textContent=o.title||"Tu lista";
   $("#intro").textContent=o.intro||"";
 
+  const strategies=o.packing_strategy||[];
+  const verifications=o.verification_needed||[];
+
   $("#strategy").innerHTML=
-    (o.packing_strategy||[]).length
-      ? `<section class="card">
-          <h3>🧠 Estrategia de equipaje</h3>
-          ${o.packing_strategy
-            .map(x=>`<div class="strategy">${esc(x)}</div>`)
-            .join("")}
+    (strategies.length || verifications.length)
+      ? `<section class="card trip-summary-card">
+          <div class="trip-summary-grid">
+            ${strategies.length
+              ? `<div class="summary-part strategy-part">
+                  <div class="summary-title">🧠 <strong>Estrategia</strong></div>
+                  ${strategies.map(x=>`<p>${esc(x)}</p>`).join("")}
+                </div>`
+              : ""}
+            ${verifications.length
+              ? `<div class="summary-part verify-part">
+                  <div class="summary-title">🔎 <strong>Antes de salir</strong></div>
+                  ${verifications.map(x=>`<p>${esc(x)}</p>`).join("")}
+                </div>`
+              : ""}
+          </div>
         </section>`
       : "";
 
-  $("#verify").innerHTML=
-    (o.verification_needed||[]).length
-      ? `<section class="card">
-          <h3>🔎 Comprueba antes de salir</h3>
-          ${o.verification_needed
-            .map(x=>`<div class="verify">${esc(x)}</div>`)
-            .join("")}
-        </section>`
-      : "";
+  $("#verify").innerHTML="";
 
   $("#discoveries").innerHTML=
     (o.discoveries||[]).length
