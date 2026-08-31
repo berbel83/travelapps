@@ -492,6 +492,37 @@ function renderResult(o){
         </section>`
       : "";
 
+  $("#discoveries").innerHTML=
+    (o.discoveries||[]).length
+      ? `<section class="discovery-card">
+          <div class="discovery-heading">
+            <span class="discovery-spark">✨</span>
+            <div>
+              <div class="eyebrow">IDEAS ÚTILES PARA ESTE VIAJE</div>
+              <h3>Cosas que quizá no habías pensado</h3>
+              <p>No son imprescindibles, pero pueden resolver situaciones muy concretas.</p>
+            </div>
+          </div>
+          <div class="discovery-grid">
+            ${o.discoveries.map(item=>`
+              <article class="discovery-item">
+                <div class="discovery-badge">💡 Hallazgo viajero</div>
+                <strong>${esc(item.name)}</strong>
+                <p>${esc(item.hook||"")}</p>
+                <a class="amazon discovery-link"
+                  data-amazon-source="discovery"
+                  target="_blank"
+                  rel="nofollow sponsored"
+                  href="${amazon(item.search_query||item.name)}">
+                  Ver una solución práctica
+                  <span>en Amazon · enlace pagado</span>
+                </a>
+              </article>
+            `).join("")}
+          </div>
+        </section>`
+      : "";
+
   items=[];
   openCategories.clear();
   categoriesInitialized=false;
@@ -575,6 +606,7 @@ function draw(){
                   <div class="why">${esc(i.why||"")}</div>
                   ${i.product_candidate
                     ? `<a class="amazon"
+                        data-amazon-source="checklist"
                         target="_blank"
                         rel="nofollow sponsored"
                         href="${amazon(i.name)}">
@@ -630,6 +662,28 @@ function draw(){
   $("#meter").style.width=pct+"%";
   $("#meterText").textContent=
     `${pct}% preparado · ${done} de ${items.length}`;
+
+  bindAmazonTracking();
+}
+
+function bindAmazonTracking(){
+  document.querySelectorAll("a.amazon").forEach(link=>{
+    if(link.dataset.trackingBound) return;
+    link.dataset.trackingBound="true";
+    link.addEventListener("click",()=>{
+      const source=link.dataset.amazonSource||"unknown";
+      if(typeof window.gtag==="function"){
+        window.gtag("event","amazon_affiliate_click",{
+          link_source:source,
+          link_text:link.textContent.trim().slice(0,100),
+          destination:"amazon_es"
+        });
+      }
+      if(typeof window.va==="function"){
+        window.va("event",{name:"Amazon affiliate click",data:{source}});
+      }
+    });
+  });
 }
 
 $("#add").onclick=()=>{
