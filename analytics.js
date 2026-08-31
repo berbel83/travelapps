@@ -54,13 +54,23 @@ document.addEventListener("DOMContentLoaded",()=>{
   if(localStorage.getItem(CONSENT_KEY)==="accepted")loadAnalytics();
   else showConsent();
 
+  if(location.pathname.includes("/guias/")){
+    trackTravelApps("guide_view",{guide_path:location.pathname});
+  }
+
   document.addEventListener("click",event=>{
     const link=event.target.closest("a");
     const button=event.target.closest("button");
 
     if(link?.href.includes("amazon.es")){
-      trackTravelApps("amazon_click",{
-        product_name:link.closest(".item")?.querySelector(".name")?.textContent?.trim()||"recomendacion",
+      const productName=
+        link.closest(".item")?.querySelector(".name")?.textContent?.trim() ||
+        link.closest(".guide-product")?.querySelector("h3")?.textContent?.trim() ||
+        link.closest(".discovery-item")?.querySelector("strong")?.textContent?.trim() ||
+        "recomendacion";
+      trackTravelApps("amazon_affiliate_click",{
+        product_name:productName,
+        link_source:link.dataset.amazonSource||"checklist",
         page_path:location.pathname
       });
     }
@@ -82,7 +92,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     }
 
     if(button?.id==="analyze"||button?.id==="importedGenerate"){
-      trackTravelApps("packing_started",{source:button.id==="importedGenerate"?"el_planazo":"manual"});
+      const ref=new URLSearchParams(location.search).get("ref");
+      trackTravelApps("packing_started",{
+        source:button.id==="importedGenerate"?"el_planazo":(ref||"manual")
+      });
     }
   });
 });
