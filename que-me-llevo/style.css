@@ -1349,3 +1349,64 @@ footer{
   .discovery-card{padding:17px;}
   .discovery-grid{grid-template-columns:1fr;}
 }
+
+
+/* Resumen compacto del viaje */
+.trip-summary-card{padding:0;overflow:hidden;}
+.trip-summary-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+.summary-part{
+  padding:17px 20px;
+}
+.summary-part + .summary-part{
+  border-left:1px solid rgba(23,59,67,.1);
+}
+.summary-title{
+  margin-bottom:7px;
+  color:#173b43;
+  font-size:.9rem;
+}
+.summary-part p{
+  margin:4px 0 0;
+  color:#617477;
+  font-size:.86rem;
+  line-height:1.45;
+}
+.strategy-part{background:linear-gradient(135deg,#f3fbf6,#fff);}
+.verify-part{background:linear-gradient(135deg,#fffaf0,#fff);}
+.footer-privacy{
+  color:inherit;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+@media(max-width:720px){
+  .trip-summary-grid{grid-template-columns:1fr;}
+  .summary-part{padding:14px 16px;}
+  .summary-part + .summary-part{
+    border-left:0;
+    border-top:1px solid rgba(23,59,67,.1);
+  }
+  .discovery-grid{
+    display:flex;
+    grid-template-columns:none;
+    gap:10px;
+    overflow-x:auto;
+    padding:2px 18px 10px 0;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-inline:contain;
+    scrollbar-width:none;
+  }
+  .discovery-grid::-webkit-scrollbar{display:none;}
+  .discovery-item{
+    flex:0 0 84%;
+    scroll-snap-align:start;
+  }
+  .discovery-heading p::after{
+    content:" Desliza para ver más →";
+    color:#bd5634;
+    font-weight:700;
+  }
+}
