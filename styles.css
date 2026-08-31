@@ -114,3 +114,31 @@ footer{max-width:1120px;margin:auto;padding:30px 24px;display:flex;justify-conte
   .guide-product{flex:0 0 84%;scroll-snap-align:start}
   .guide-products{padding:21px 18px}
 }
+
+.guide-share{
+  margin-top:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:18px 20px;
+  border:1px solid rgba(20,107,107,.18);
+  border-radius:18px;
+  background:#edf7f4;
+}
+.guide-share div{display:flex;flex-direction:column;gap:3px}
+.guide-share span{color:var(--muted);font-size:12px}
+.guide-share a{
+  flex:0 0 auto;
+  padding:11px 14px;
+  border-radius:12px;
+  background:#146b6b;
+  color:white;
+  font-size:12px;
+  font-weight:850;
+}
+.guide-share a:hover{background:#0f5555}
+@media(max-width:620px){
+  .guide-share{align-items:stretch;flex-direction:column}
+  .guide-share a{text-align:center}
+}
