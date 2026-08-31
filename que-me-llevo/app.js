@@ -543,6 +543,16 @@ function renderResult(o){
     )
   );
 
+  if(typeof trackTravelApps==="function"){
+    const ref=new URLSearchParams(location.search).get("ref");
+    trackTravelApps("packing_generated",{
+      source:importedPlan?"el_planazo":(ref||"manual"),
+      item_count:items.length,
+      category_count:(o.categories||[]).length,
+      discovery_count:(o.discoveries||[]).length
+    });
+  }
+
   draw();
 
   $("#leave").innerHTML=
@@ -704,13 +714,6 @@ function bindAmazonTracking(){
     link.dataset.trackingBound="true";
     link.addEventListener("click",()=>{
       const source=link.dataset.amazonSource||"unknown";
-      if(typeof window.gtag==="function"){
-        window.gtag("event","amazon_affiliate_click",{
-          link_source:source,
-          link_text:link.textContent.trim().slice(0,100),
-          destination:"amazon_es"
-        });
-      }
       if(typeof window.va==="function"){
         window.va("event",{name:"Amazon affiliate click",data:{source}});
       }
