@@ -1410,3 +1410,7 @@ footer{
     font-weight:700;
   }
 }
+
+
+/* Accesos contextuales para viajes en avión */
+.flight-tools-card{margin:18px 0;padding:20px;border:1px solid rgba(23,59,67,.14);border-radius:22px;background:linear-gradient(135deg,#eef7f7,#fff);box-shadow:0 12px 30px rgba(31,52,56,.06)}.flight-tools-heading{display:flex;gap:13px;align-items:flex-start}.flight-tools-heading>span{display:grid;place-items:center;width:42px;height:42px;flex:0 0 42px;border-radius:14px;background:#fff;font-size:21px}.flight-tools-heading small{color:var(--primary);font-size:9px;font-weight:900;letter-spacing:.12em}.flight-tools-heading h3{margin:3px 0 4px;color:var(--text);font-size:19px}.flight-tools-heading p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}.flight-tools-links{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}.flight-tools-links a{display:flex;align-items:center;justify-content:space-between;gap:9px;padding:13px 14px;border:1px solid rgba(23,59,67,.11);border-radius:14px;background:#fff;color:var(--text);font-size:12px;font-weight:850}.flight-tools-links a:hover{border-color:var(--primary);color:var(--primary)}.flight-tools-links b{color:var(--primary)}@media(max-width:640px){.flight-tools-card{padding:17px}.flight-tools-links{grid-template-columns:1fr}}
