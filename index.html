@@ -15,71 +15,58 @@
   <meta name="twitter:card" content="summary_large_image">
   <title>TravelApps | Planifica el viaje y prepara tu equipaje</title>
   <link rel="stylesheet" href="./styles.css">
-  <script defer src="/_vercel/insights/script.js"></script>
   <link rel="stylesheet" href="./analytics.css">
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="TravelApps, inicio"><span class="brand-mark">T</span><span>Travel<b>Apps</b></span></a>
-    <a class="nav-link" href="#aplicaciones">Aplicaciones</a>
+    <a class="brand" href="./" aria-label="TravelApps, inicio"><span class="brand-mark">T</span><span>Travel<b>Apps</b></span></a>
+    <nav><a href="#herramientas">Herramientas</a><a href="#guias">Guías</a></nav>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
+    <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Herramientas para disfrutar más</p>
-        <h1>Menos complicaciones.<br><em>Más planes.</em></h1>
-        <p class="hero-text">Aplicaciones sencillas para organizar viajes, preparar el equipaje y aprovechar mejor tu tiempo.</p>
-        <a class="primary-button" href="#aplicaciones">Ver aplicaciones <span>↓</span></a>
+        <p class="eyebrow">Tu viaje, más fácil</p>
+        <h1>Planifica el viaje.<br><em>No olvides nada.</em></h1>
+        <p>Dos herramientas gratuitas conectadas: crea primero el itinerario y prepara después una lista de equipaje adaptada a tu plan.</p>
       </div>
-      <div class="hero-visual" role="img" aria-label="Paisaje mediterráneo y ruta de viaje">
-        <div class="route-card route-card-top"><span>Próximo destino</span><strong>Todo preparado</strong></div>
-        <div class="route-line"><i class="route-dot route-start"></i><i class="route-dot route-end"></i></div>
-        <div class="route-card route-card-bottom"><span>TravelApps</span><strong>Tu viaje empieza aquí</strong></div>
+
+      <div class="journey-flow" aria-label="Cómo funciona TravelApps">
+        <a class="flow-card plan" href="https://elplanazo.lovable.app">
+          <span class="step">1</span><span class="flow-icon">🗺️</span>
+          <div><small>PRIMERO</small><h2>El Planazo</h2><p>Crea tu itinerario personalizado.</p><strong>Empezar a planificar →</strong></div>
+        </a>
+        <span class="flow-arrow" aria-hidden="true">↓</span>
+        <a class="flow-card pack" href="./que-me-llevo/">
+          <span class="step">2</span><span class="flow-icon">🎒</span>
+          <div><small>DESPUÉS</small><h2>¿Qué me llevo?</h2><p>Genera la checklist para ese viaje.</p><strong>Preparar el equipaje →</strong></div>
+        </a>
       </div>
     </section>
 
-    <section class="apps-section" id="aplicaciones">
-      <div class="section-heading">
-        <div><p class="eyebrow">Todo en un mismo lugar</p><h2>Elige tu herramienta</h2></div>
-        <p>Ya puedes crear tu itinerario con El Planazo y preparar después el equipaje con ¿Qué me llevo?.</p>
-      </div>
-      <div class="app-grid">
-        <a class="app-card active" href="./que-me-llevo/">
-          <div class="app-icon coral">🎒</div><span class="status live">Disponible</span>
-          <h3>¿Qué me llevo?</h3><p>Una lista de equipaje inteligente y personalizada para cada viaje.</p><span class="card-action">Abrir aplicación →</span>
-        </a>
-        <a class="app-card active" href="https://elplanazo.lovable.app">
-          <div class="app-icon blue">🗺️</div><span class="status live">Disponible</span>
-          <h3>El Planazo</h3><p>Crea itinerarios que encajan con tu tiempo, compañía y forma de viajar.</p><span class="card-action">Abrir aplicación →</span>
-        </a>
-        <article class="app-card">
-          <div class="app-icon green">⚡</div><span class="status soon">Próximamente</span>
-          <h3>Calculadora de carga</h3><p>Calcula de forma sencilla cuánto tardará en cargarse tu coche eléctrico.</p><span class="card-action">En preparación</span>
-        </article>
-        <article class="app-card">
-          <div class="app-icon purple">⏱️</div><span class="status soon">Próximamente</span>
-          <h3>Compausa</h3><p>Haz seguimiento de tus ayunos y celebra tus avances sin complicaciones.</p><span class="card-action">En preparación</span>
-        </article>
+    <section class="tools-section" id="herramientas">
+      <div class="compact-heading"><div><p class="eyebrow">También en TravelApps</p><h2>Más herramientas</h2></div><p>Seguimos construyendo utilidades sencillas para el día a día.</p></div>
+      <div class="coming-grid">
+        <article><span>⚡</span><div><h3>Calculadora de carga</h3><p>Calcula cuánto tardará en cargarse tu coche eléctrico.</p></div><b>Próximamente</b></article>
+        <article><span>⏱️</span><div><h3>Compausa</h3><p>Haz seguimiento de tus ayunos y avances.</p></div><b>Próximamente</b></article>
       </div>
     </section>
+
     <section class="guides-section" id="guias">
-      <div class="section-heading">
-        <div><p class="eyebrow">Consejos prácticos</p><h2>Guías para preparar tu viaje</h2></div>
-        <p>Empieza con una lista orientativa y personalízala después según tu destino, compañía y actividades.</p>
-      </div>
+      <div class="compact-heading"><div><p class="eyebrow">Consejos prácticos</p><h2>Guías rápidas</h2></div><p>Una base útil que después puedes personalizar.</p></div>
       <div class="guide-grid">
-        <a class="guide-card" href="./guias/que-llevar-madrid-con-ninos/"><span>👨‍👩‍👦‍👦</span><h3>Madrid con niños</h3><p>Equipaje familiar para una escapada urbana.</p></a>
-        <a class="guide-card" href="./guias/lista-equipaje-3-dias/"><span>🧳</span><h3>Viaje de 3 días</h3><p>Qué llevar sin llenar la maleta de más.</p></a>
-        <a class="guide-card" href="./guias/que-llevar-parque-tematico/"><span>🎢</span><h3>Parque temático</h3><p>Comodidad para jornadas largas y familiares.</p></a>
-        <a class="guide-card" href="./guias/que-llevar-avion/"><span>✈️</span><h3>Viaje en avión</h3><p>Organiza la cabina y lo imprescindible.</p></a>
-        <a class="guide-card" href="./guias/que-llevar-playa-con-ninos/"><span>🏖️</span><h3>Playa con niños</h3><p>Sol, agua y pequeños imprevistos bajo control.</p></a>
+        <a class="guide-card" href="./guias/que-llevar-madrid-con-ninos/"><span>👨‍👩‍👦‍👦</span><div><h3>Madrid con niños</h3><p>Equipaje familiar urbano.</p></div><b>→</b></a>
+        <a class="guide-card" href="./guias/lista-equipaje-3-dias/"><span>🧳</span><div><h3>Viaje de 3 días</h3><p>Lo necesario sin cargar de más.</p></div><b>→</b></a>
+        <a class="guide-card" href="./guias/que-llevar-parque-tematico/"><span>🎢</span><div><h3>Parque temático</h3><p>Para jornadas largas en familia.</p></div><b>→</b></a>
+        <a class="guide-card" href="./guias/que-llevar-avion/"><span>✈️</span><div><h3>Viaje en avión</h3><p>Cabina y objetos esenciales.</p></div><b>→</b></a>
+        <a class="guide-card" href="./guias/que-llevar-playa-con-ninos/"><span>🏖️</span><div><h3>Playa con niños</h3><p>Sol, agua e imprevistos.</p></div><b>→</b></a>
       </div>
     </section>
   </main>
 
   <footer>
-    <a class="brand footer-brand" href="#inicio"><span class="brand-mark">T</span><span>Travel<b>Apps</b></span></a>
+    <a class="brand footer-brand" href="./"><span class="brand-mark">T</span><span>Travel<b>Apps</b></span></a>
     <p>Herramientas sencillas para planes reales. · <a href="./privacidad/">Privacidad</a></p>
   </footer>
   <script src="./analytics.js"></script>
