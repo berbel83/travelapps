@@ -1252,3 +1252,5 @@ footer{
     display:none!important;
   }
 }
+
+.brand-logo{object-fit:contain;padding:0;background:transparent;box-shadow:none}.footer-logo{width:24px;height:24px;display:block}
