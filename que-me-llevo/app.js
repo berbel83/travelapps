@@ -560,10 +560,24 @@ function draw(){
   const cats=[...new Set(items.map(x=>x.cat))];
 
   if(!categoriesInitialized){
+    const contextualPriority=[
+      "Bebé",
+      "Nieve y frío",
+      "Camping",
+      "Playa",
+      "Trabajo",
+      "Durante la etapa",
+      "Albergue y descanso",
+      "Viaje internacional",
+      "Equipaje",
+      "Niños"
+    ];
+    const featuredCategory=
+      contextualPriority.find(category=>cats.includes(category)) ||
+      cats[0];
+
     openCategories=new Set(
-      cats.filter((c,i)=>
-        i===0 || c==="Ropa" || c==="Niños"
-      )
+      featuredCategory ? [featuredCategory] : []
     );
     categoriesInitialized=true;
   }
