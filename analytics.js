@@ -87,8 +87,11 @@ document.addEventListener("DOMContentLoaded",()=>{
       trackTravelApps("guide_cta",{guide_path:location.pathname});
     }
 
-    if(button?.id==="shareWhatsApp"){
-      trackTravelApps("whatsapp_share",{page_path:location.pathname});
+    if(button?.id==="shareWhatsApp"||link?.dataset.shareSource==="guide"){
+      trackTravelApps("whatsapp_share",{
+        page_path:location.pathname,
+        share_source:link?.dataset.shareSource||"packing_list"
+      });
     }
 
     if(button?.id==="analyze"||button?.id==="importedGenerate"){
