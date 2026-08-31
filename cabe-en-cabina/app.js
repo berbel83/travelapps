@@ -2,7 +2,7 @@ let airlines=[],verified="";
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 async function init(){
- const r=await fetch("airlines.json"); const data=await r.json(); airlines=data.airlines; verified=data.verified;
+ const r=await fetch("airlines.json"); const data=await r.json(); airlines=data.airlines; verified=data.verified; $("#coverage").textContent=`${airlines.length} aerolíneas · ${airlines.reduce((n,a)=>n+a.options.length,0)} opciones de equipaje`;
  $("#airline").innerHTML=airlines.map(a=>`<option value="${a.id}">${esc(a.name)}</option>`).join("");
  fillOptions(); $("#airline").addEventListener("change",fillOptions); $("#bagForm").addEventListener("submit",calculate);
 }
