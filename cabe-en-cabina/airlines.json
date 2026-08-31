@@ -1,0 +1,157 @@
+{
+  "verified": "2026-08-31",
+  "airlines": [
+    {
+      "id": "ryanair",
+      "name": "Ryanair",
+      "source": "https://help.ryanair.com/hc/es-es/articles/12888036565521-Pol%C3%ADtica-de-equipaje-de-Ryanair",
+      "options": [
+        {
+          "id": "personal",
+          "label": "Bolsa gratuita bajo el asiento",
+          "dims": [
+            40,
+            30,
+            20
+          ],
+          "weight": null,
+          "note": "Incluida en todas las tarifas."
+        },
+        {
+          "id": "cabin",
+          "label": "Maleta de cabina de 10 kg",
+          "dims": [
+            55,
+            40,
+            20
+          ],
+          "weight": 10,
+          "note": "Requiere Prioridad y 2 piezas de equipaje de cabina u otra opción que la incluya."
+        }
+      ]
+    },
+    {
+      "id": "vueling",
+      "name": "Vueling",
+      "source": "https://www.vueling.com/es/prepara-tu-viaje/equipaje/equipaje-de-cabina",
+      "options": [
+        {
+          "id": "personal",
+          "label": "Bolsa gratuita bajo el asiento",
+          "dims": [
+            40,
+            30,
+            20
+          ],
+          "weight": null,
+          "note": "Incluida en todas las reservas."
+        },
+        {
+          "id": "cabin",
+          "label": "Maleta en compartimento superior",
+          "dims": [
+            55,
+            40,
+            20
+          ],
+          "weight": 10,
+          "note": "Solo si tu tarifa o servicio contratado la incluye."
+        }
+      ]
+    },
+    {
+      "id": "easyjet",
+      "name": "easyJet",
+      "source": "https://www.easyjet.com/es/ayuda/equipaje/equipaje-de-mano",
+      "options": [
+        {
+          "id": "personal",
+          "label": "Equipaje pequeño bajo el asiento",
+          "dims": [
+            45,
+            36,
+            20
+          ],
+          "weight": 15,
+          "note": "Incluido para cada pasajero; debes poder levantarlo y transportarlo."
+        },
+        {
+          "id": "cabin",
+          "label": "Equipaje grande de cabina",
+          "dims": [
+            56,
+            45,
+            25
+          ],
+          "weight": 15,
+          "note": "Requiere tarifa, asiento, membresía o reserva que lo incluya."
+        }
+      ]
+    },
+    {
+      "id": "iberia",
+      "name": "Iberia",
+      "source": "https://www.iberia.com/es/equipajes/de-mano/",
+      "options": [
+        {
+          "id": "cabin",
+          "label": "Maleta de cabina en Turista",
+          "dims": [
+            56,
+            40,
+            25
+          ],
+          "weight": 10,
+          "note": "Consulta tu cabina y vuelo; existen condiciones distintas en Business."
+        }
+      ]
+    },
+    {
+      "id": "volotea",
+      "name": "Volotea",
+      "source": "https://www.volotea.com/es/equipaje/",
+      "options": [
+        {
+          "id": "personal",
+          "label": "Bolsa gratuita bajo el asiento",
+          "dims": [
+            40,
+            30,
+            20
+          ],
+          "weight": null,
+          "note": "Incluida en la tarifa estándar."
+        },
+        {
+          "id": "cabin",
+          "label": "Bolsa más maleta con prioridad",
+          "dims": [
+            55,
+            40,
+            25
+          ],
+          "weight": 10,
+          "note": "El conjunto de bolsa y maleta no puede superar 10 kg; requiere prioridad o modalidad que la incluya."
+        }
+      ]
+    },
+    {
+      "id": "aireuropa",
+      "name": "Air Europa",
+      "source": "https://www.aireuropa.com/es/es/aea/informacion-para-volar/equipaje/equipaje-de-mano.html",
+      "options": [
+        {
+          "id": "cabin",
+          "label": "Maleta de cabina en Turista",
+          "dims": [
+            55,
+            35,
+            25
+          ],
+          "weight": 10,
+          "note": "Las condiciones pueden variar en Business y según el vuelo."
+        }
+      ]
+    }
+  ]
+}
