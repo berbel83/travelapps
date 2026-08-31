@@ -7,5 +7,10 @@
   <url><loc>https://travelapps-es.vercel.app/guias/que-llevar-parque-tematico/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://travelapps-es.vercel.app/guias/que-llevar-avion/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://travelapps-es.vercel.app/guias/que-llevar-playa-con-ninos/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://travelapps-es.vercel.app/guias/que-llevar-crucero/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://travelapps-es.vercel.app/guias/que-llevar-viaje-con-bebe/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://travelapps-es.vercel.app/guias/que-llevar-camping-con-ninos/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://travelapps-es.vercel.app/guias/que-llevar-autocaravana/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://travelapps-es.vercel.app/guias/que-llevar-viaje-con-perro/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://travelapps-es.vercel.app/privacidad/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
