@@ -1414,3 +1414,29 @@ footer{
 
 /* Accesos contextuales para viajes en avión */
 .flight-tools-card{margin:18px 0;padding:20px;border:1px solid rgba(23,59,67,.14);border-radius:22px;background:linear-gradient(135deg,#eef7f7,#fff);box-shadow:0 12px 30px rgba(31,52,56,.06)}.flight-tools-heading{display:flex;gap:13px;align-items:flex-start}.flight-tools-heading>span{display:grid;place-items:center;width:42px;height:42px;flex:0 0 42px;border-radius:14px;background:#fff;font-size:21px}.flight-tools-heading small{color:var(--primary);font-size:9px;font-weight:900;letter-spacing:.12em}.flight-tools-heading h3{margin:3px 0 4px;color:var(--text);font-size:19px}.flight-tools-heading p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}.flight-tools-links{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}.flight-tools-links a{display:flex;align-items:center;justify-content:space-between;gap:9px;padding:13px 14px;border:1px solid rgba(23,59,67,.11);border-radius:14px;background:#fff;color:var(--text);font-size:12px;font-weight:850}.flight-tools-links a:hover{border-color:var(--primary);color:var(--primary)}.flight-tools-links b{color:var(--primary)}@media(max-width:640px){.flight-tools-card{padding:17px}.flight-tools-links{grid-template-columns:1fr}}
+
+
+/* =====================================================
+   TRAVELAPPS — IDENTIDAD VISUAL VIBRANTE
+===================================================== */
+:root{--brand-navy:#103943;--brand-teal:#1f7a75;--brand-coral:#f17952;--brand-sun:#f6c45d;--brand-mint:#dff3eb}
+body{background:
+  radial-gradient(circle at 8% 4%,rgba(31,122,117,.13),transparent 24rem),
+  radial-gradient(circle at 94% 12%,rgba(241,121,82,.13),transparent 23rem),
+  var(--bg)}
+.topbar{background:rgba(255,255,255,.78);backdrop-filter:blur(15px);border-bottom:1px solid rgba(16,57,67,.08)}
+.hero-shell,.imported-shell{position:relative;isolation:isolate;overflow:hidden;border:0;background:linear-gradient(145deg,#fff 0%,#fff8ef 62%,#eaf6f1 100%);box-shadow:0 28px 70px rgba(16,57,67,.13)}
+.hero-shell:before,.imported-shell:after{content:"";position:absolute;z-index:-1;width:300px;height:300px;right:-145px;top:-140px;border:42px solid rgba(31,122,117,.07);border-radius:50%}
+.hero-shell:after{content:"";position:absolute;left:-45px;bottom:18px;width:160px;height:65px;border-top:3px dashed rgba(241,121,82,.2);border-radius:50%;transform:rotate(12deg)}
+.hero-badge,.imported-badge{background:var(--brand-navy);color:#fff;box-shadow:0 9px 22px rgba(16,57,67,.18)}
+.hero-shell h1,.imported-shell h1{color:var(--brand-navy);text-wrap:balance}.hero-shell h1 span{color:var(--brand-coral);position:relative}.hero-shell h1 span:after{content:"";position:absolute;left:2%;right:0;bottom:-8px;border-top:3px solid var(--brand-sun);border-radius:50%}
+.trip-box{border:1px solid rgba(16,57,67,.1);box-shadow:0 20px 45px rgba(16,57,67,.09);background:rgba(255,255,255,.9)}
+.main,.hero-action,.imported-action{background:linear-gradient(100deg,var(--brand-coral),#f59652);box-shadow:0 12px 28px rgba(241,121,82,.28);transition:.2s}.main:hover,.hero-action:hover,.imported-action:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(241,121,82,.35)}
+.travelapps-note{background:linear-gradient(135deg,#edf8f4,#fff);border-color:rgba(31,122,117,.13)}.note-icon,.result-icon,.section-icon{background:var(--brand-mint);box-shadow:inset 0 0 0 1px rgba(31,122,117,.08)}
+.card,.result-hero{border-color:rgba(16,57,67,.09);box-shadow:0 15px 38px rgba(16,57,67,.075)}.result-hero{overflow:hidden;background:linear-gradient(135deg,#fff,#f0f8f5)}.result-hero:after{content:"";position:absolute;width:160px;height:160px;right:-90px;top:-90px;border:25px solid rgba(31,122,117,.06);border-radius:50%}
+.category-card summary:before{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#edf7f4;font-size:20px}.category-card[open]{border-left:4px solid var(--brand-teal)}.category-card:nth-of-type(3n+2)[open]{border-left-color:var(--brand-coral)}.category-card:nth-of-type(3n)[open]{border-left-color:var(--brand-sun)}
+.item input[type=checkbox]:checked{background:linear-gradient(145deg,var(--brand-teal),#36a291);border-color:var(--brand-teal);box-shadow:0 5px 12px rgba(31,122,117,.2)}
+.amazon{background:#fff5df;color:#785417;border:1px solid rgba(246,196,93,.35)}.amazon:hover{background:#ffe9b7}.discovery-card{border:0;background:linear-gradient(135deg,#fff3e7,#fff 53%,#eaf7f2);box-shadow:0 22px 52px rgba(16,57,67,.11)}.discovery-item{border:0;box-shadow:0 9px 22px rgba(16,57,67,.08)}.discovery-link{background:linear-gradient(100deg,var(--brand-navy),#1b5b64)}.flight-tools-card{border:0;background:linear-gradient(135deg,#e9f6f2,#fff);box-shadow:0 16px 36px rgba(16,57,67,.09)}
+.meter{height:13px;background:#e9e4dd}.meter i{background:linear-gradient(90deg,var(--brand-teal),#65c7ae,var(--brand-sun))}
+.sticky-actions{backdrop-filter:blur(12px)}
+@media(prefers-reduced-motion:no-preference){.main,.item,.discovery-item,.category-card{transition:transform .2s ease,box-shadow .2s ease}.discovery-item:hover{transform:translateY(-3px)}.item.done{animation:packed .28s ease}@keyframes packed{50%{transform:scale(.985);background:#e9f6ef}}}
