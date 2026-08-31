@@ -34,7 +34,7 @@ function calculate(e){
  <div class="result-note"><strong>${esc(a.name)} · ${esc(o.label)}</strong><p>${esc(o.note)}</p></div>
  <div class="result-actions"><a class="official" target="_blank" rel="noopener" href="${a.source}">Consultar norma oficial ↗</a><a class="amazon-cta" data-amazon-source="cabin_calculator_${ok?"compatible":"oversize"}" target="_blank" rel="nofollow sponsored" href="${amazon(query)}">${ok?"Ver organizadores para aprovechar el espacio":"Ver equipaje compatible en Amazon"}<small>Enlace pagado</small></a></div>
  <p class="verified">Información revisada el ${fmtDate(verified)}. El resultado es orientativo: comprueba la tarifa y reserva concretas antes de volar.</p>
- <a class="packing-link" href="../que-me-llevo/?trip=${encodeURIComponent("Viajo en avión con "+a.name+" y llevaré equipaje de cabina.")}&ref=cabin_calculator">🎒 Ahora prepara tu lista completa</a>`;
+ <a class="packing-link" href="../antes-de-volar/">💧 Revisar también líquidos y baterías</a>\n <a class="packing-link" href="../que-me-llevo/?trip=${encodeURIComponent("Viajo en avión con "+a.name+" y llevaré equipaje de cabina.")}&ref=cabin_calculator">🎒 Ahora prepara tu lista completa</a>`;
  $("#result").scrollIntoView({behavior:"smooth",block:"start"});
  if(typeof trackTravelApps==="function")trackTravelApps("cabin_check",{airline:a.id,allowance:o.id,result:ok?"compatible":"oversize",weight_entered:weightKnown});
 }
