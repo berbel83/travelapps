@@ -503,15 +503,15 @@ function renderResult(o){
           <div class="discovery-heading">
             <span class="discovery-spark">✨</span>
             <div>
-              <div class="eyebrow">IDEAS ÚTILES PARA ESTE VIAJE</div>
-              <h3>Cosas que quizá no habías pensado</h3>
-              <p>No son imprescindibles, pero pueden resolver situaciones muy concretas.</p>
+              <div class="eyebrow">SELECCIONADO PARA TU VIAJE</div>
+              <h3>3 cosas que podrían salvarte el viaje</h3>
+              <p>Pequeños hallazgos elegidos por el tipo de viaje: quizá no los necesites, pero si surge el problema agradecerás llevarlos.</p>
             </div>
           </div>
           <div class="discovery-grid">
             ${o.discoveries.map(item=>`
               <article class="discovery-item">
-                <div class="discovery-badge">💡 Hallazgo viajero</div>
+                <div class="discovery-badge">💡 Elegido para este viaje</div>
                 <strong>${esc(item.name)}</strong>
                 <p>${esc(item.hook||"")}</p>
                 <a class="amazon discovery-link"
@@ -519,8 +519,8 @@ function renderResult(o){
                   target="_blank"
                   rel="nofollow sponsored"
                   href="${amazon(item.search_query||item.name)}">
-                  Ver una solución práctica
-                  <span>en Amazon · enlace pagado</span>
+                  Ver opción recomendada
+                  <span>Amazon · enlace pagado</span>
                 </a>
               </article>
             `).join("")}
