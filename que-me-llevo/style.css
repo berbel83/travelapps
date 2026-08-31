@@ -1254,3 +1254,98 @@ footer{
 }
 
 .brand-logo{object-fit:contain;padding:0;background:transparent;box-shadow:none}.footer-logo{width:24px;height:24px;display:block}
+
+
+/* Descubrimientos útiles de afiliación */
+.discovery-card{
+  margin:18px 0;
+  padding:22px;
+  border:1px solid rgba(241,124,82,.32);
+  border-radius:24px;
+  background:linear-gradient(135deg,#fff9f3 0%,#fff 58%,#f4fbf8 100%);
+  box-shadow:0 14px 38px rgba(31,52,56,.08);
+}
+.discovery-heading{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:16px;
+}
+.discovery-heading h3{
+  margin:4px 0 5px;
+  color:#173b43;
+  font-size:1.2rem;
+}
+.discovery-heading p{
+  margin:0;
+  color:#66777a;
+  font-size:.92rem;
+}
+.discovery-spark{
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 8px 20px rgba(241,124,82,.14);
+}
+.discovery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+.discovery-item{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  padding:16px;
+  border:1px solid rgba(23,59,67,.1);
+  border-radius:18px;
+  background:rgba(255,255,255,.86);
+}
+.discovery-item strong{
+  color:#173b43;
+  line-height:1.25;
+}
+.discovery-item p{
+  flex:1;
+  margin:8px 0 14px;
+  color:#66777a;
+  font-size:.88rem;
+  line-height:1.45;
+}
+.discovery-badge{
+  width:max-content;
+  margin-bottom:9px;
+  padding:5px 8px;
+  border-radius:999px;
+  background:#fff0e8;
+  color:#bd5634;
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.02em;
+}
+.discovery-link{
+  display:flex!important;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:2px;
+  padding:10px 12px!important;
+  border-radius:12px;
+  background:#173b43;
+  color:#fff!important;
+  font-weight:800;
+  text-decoration:none;
+}
+.discovery-link:hover{background:#f17c52;}
+.discovery-link span{
+  color:rgba(255,255,255,.72)!important;
+  font-size:.68rem!important;
+  font-weight:500;
+}
+@media(max-width:720px){
+  .discovery-card{padding:17px;}
+  .discovery-grid{grid-template-columns:1fr;}
+}
