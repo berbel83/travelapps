@@ -146,3 +146,5 @@ footer{max-width:1120px;margin:auto;padding:30px 24px;display:flex;justify-conte
 .all-guides{margin-top:22px;display:flex;align-items:center;justify-content:center;gap:14px}.all-guides .primary-button{margin:0}.all-guides span{color:var(--muted);font-size:12px}
 .directory-page{max-width:1120px}.directory-group{margin-top:44px}.directory-group h2{margin:0 0 15px;font-family:Georgia,serif;font-size:28px;font-weight:500}.directory-group .guide-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.directory-group .guide-card{min-height:86px}
 @media(max-width:760px){.directory-group .guide-grid{grid-template-columns:1fr}.all-guides{align-items:stretch;flex-direction:column;text-align:center}.all-guides .primary-button{justify-content:center}}
+
+.buyer-directory{padding:24px;border-radius:22px;background:linear-gradient(135deg,#fff0e8,#fff);border:1px solid rgba(239,108,87,.2)}.directory-note,.buyer-intro{margin:-8px 0 18px;color:var(--muted);font-size:13px;line-height:1.55}.buyer-products .guide-product{border-color:rgba(239,108,87,.2)}.buyer-products .guide-product a{margin-top:auto}
