@@ -528,6 +528,22 @@ function renderResult(o){
         </section>`
       : "";
 
+  const flightText=[
+    $("#trip")?.value||"",
+    ...(o.categories||[]).map(c=>c.name||""),
+    importedPlan?.transport ? JSON.stringify(importedPlan.transport) : ""
+  ].join(" ");
+  const isFlight=/\b(avión|avion|vuelo|volar|aerolínea|aerolinea|aeropuerto|cabina)\b/i.test(flightText);
+  $("#flightTools").innerHTML=isFlight
+    ? `<section class="flight-tools-card">
+        <div class="flight-tools-heading"><span>✈️</span><div><small>ANTES DE VOLAR</small><h3>Evita sorpresas en el aeropuerto</h3><p>Comprueba ahora los límites que no dependen de tu lista de equipaje.</p></div></div>
+        <div class="flight-tools-links">
+          <a href="../cabe-en-cabina/">🧳 Comprobar mi equipaje de cabina <b>→</b></a>
+          <a href="../antes-de-volar/">💧 Revisar líquidos y baterías <b>→</b></a>
+        </div>
+      </section>`
+    : "";
+
   items=[];
   openCategories.clear();
   categoriesInitialized=false;
