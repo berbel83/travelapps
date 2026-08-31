@@ -152,6 +152,216 @@
           "note": "Las condiciones pueden variar en Business y según el vuelo."
         }
       ]
+    },
+    {
+      "id": "binter",
+      "name": "Binter",
+      "source": "https://www.bintercanarias.com/es/informacion/equipaje-de-mano",
+      "options": [
+        {
+          "id": "atr",
+          "label": "Maleta de mano · flota ATR",
+          "dims": [
+            45,
+            35,
+            25
+          ],
+          "weight": 8,
+          "note": "La medida depende del avión asignado. Esta opción corresponde a la flota ATR."
+        },
+        {
+          "id": "embraer",
+          "label": "Maleta de mano · flota Embraer",
+          "dims": [
+            52,
+            40,
+            25
+          ],
+          "weight": 8,
+          "note": "La medida depende del avión asignado. En conexiones entre ambas flotas, consulta la indicación oficial."
+        }
+      ]
+    },
+    {
+      "id": "wizzair",
+      "name": "Wizz Air",
+      "source": "https://www.wizzair.com/es-es/centro-de-ayuda/informacion-de-reservas-y-servicios/equipaje/equipaje-permitido/equipaje-de-mano",
+      "options": [
+        {
+          "id": "personal",
+          "label": "Bolsa gratuita bajo el asiento",
+          "dims": [
+            40,
+            30,
+            20
+          ],
+          "weight": 10,
+          "note": "Incluida gratuitamente. Consulta WIZZ Priority si quieres añadir una maleta con ruedas."
+        }
+      ]
+    },
+    {
+      "id": "norwegian",
+      "name": "Norwegian",
+      "source": "https://www.norwegian.com/es/informacion-sobre-el-viaje/equipaje/equipaje-de-mano/",
+      "options": [
+        {
+          "id": "personal",
+          "label": "LowFare · equipaje bajo el asiento",
+          "dims": [
+            40,
+            30,
+            20
+          ],
+          "weight": 10,
+          "note": "El límite de 10 kg se aplica al peso combinado permitido por el billete."
+        },
+        {
+          "id": "cabin",
+          "label": "LowFare+ · maleta superior",
+          "dims": [
+            55,
+            40,
+            23
+          ],
+          "weight": 10,
+          "note": "LowFare+ permite bolsa bajo asiento y maleta superior con un máximo combinado de 10 kg."
+        }
+      ]
+    },
+    {
+      "id": "tap",
+      "name": "TAP Air Portugal",
+      "source": "https://www.flytap.com/es-es/informacion/equipaje/equipaje-mano",
+      "options": [
+        {
+          "id": "cabin",
+          "label": "Equipaje de mano estándar",
+          "dims": [
+            55,
+            40,
+            25
+          ],
+          "weight": 10,
+          "note": "El número de piezas puede depender de la tarifa, destino y estatus TAP Miles&Go."
+        }
+      ]
+    },
+    {
+      "id": "transavia",
+      "name": "Transavia",
+      "source": "https://www.transavia.com/ayuda/es-es/equipaje/equipaje-de-cabina/cuanto-llevar",
+      "options": [
+        {
+          "id": "personal",
+          "label": "Equipaje gratuito bajo el asiento",
+          "dims": [
+            40,
+            30,
+            20
+          ],
+          "weight": 10,
+          "note": "Puede ir siempre en cabina. El límite de peso es de 10 kg."
+        },
+        {
+          "id": "cabin",
+          "label": "Maleta de cabina contratada",
+          "dims": [
+            55,
+            40,
+            25
+          ],
+          "weight": 10,
+          "note": "Debe contratarse o estar incluida en la tarifa. El peso combinado con la bolsa pequeña no puede superar 10 kg."
+        }
+      ]
+    },
+    {
+      "id": "lufthansa",
+      "name": "Lufthansa",
+      "source": "https://www.lufthansa.com/br/es/handgepaeck",
+      "options": [
+        {
+          "id": "personal",
+          "label": "Objeto personal · Economy Basic",
+          "dims": [
+            40,
+            30,
+            15
+          ],
+          "weight": null,
+          "note": "En corto y medio radio, Economy Basic incluye el objeto personal bajo el asiento."
+        },
+        {
+          "id": "cabin",
+          "label": "Maleta de mano · Economy",
+          "dims": [
+            55,
+            40,
+            23
+          ],
+          "weight": 8,
+          "note": "La inclusión depende de la tarifa y ruta; en Economy suele admitirse una pieza cuando está incluida."
+        }
+      ]
+    },
+    {
+      "id": "airfrance",
+      "name": "Air France",
+      "source": "https://wwws.airfrance.es/information/bagages/bagage-cabine-soute",
+      "options": [
+        {
+          "id": "personal",
+          "label": "Bolsa pequeña bajo el asiento",
+          "dims": [
+            40,
+            30,
+            15
+          ],
+          "weight": null,
+          "note": "Bolsa para objetos esenciales. La franquicia total depende de la tarifa y cabina."
+        },
+        {
+          "id": "cabin",
+          "label": "Maleta de mano",
+          "dims": [
+            55,
+            35,
+            25
+          ],
+          "weight": 12,
+          "note": "El peso indicado es combinado con la bolsa pequeña en Economy; confirma si tu tarifa incluye la maleta."
+        }
+      ]
+    },
+    {
+      "id": "klm",
+      "name": "KLM",
+      "source": "https://www.klm.es/information/baggage/hand-baggage-allowance",
+      "options": [
+        {
+          "id": "personal",
+          "label": "Basic · bolsa pequeña",
+          "dims": [
+            40,
+            30,
+            15
+          ],
+          "weight": null,
+          "note": "En Economy Basic se incluye la bolsa pequeña bajo el asiento."
+        },
+        {
+          "id": "cabin",
+          "label": "Light, Standard o Flex · maleta",
+          "dims": [
+            55,
+            35,
+            25
+          ],
+          "weight": 12,
+          "note": "Peso combinado máximo de bolsa pequeña y maleta en Economy."
+        }
+      ]
     }
   ]
 }
