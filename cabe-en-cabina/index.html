@@ -1,7 +1,7 @@
 <!doctype html><html lang="es"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>¿Cabe en cabina? Calculadora de equipaje de mano | TravelApps</title>
-<meta name="description" content="Comprueba si tu mochila o maleta cumple las medidas de equipaje de mano de Ryanair, Vueling, easyJet, Iberia, Volotea y Air Europa.">
+<meta name="description" content="Comprueba si tu mochila o maleta cumple las medidas de equipaje de mano de 14 aerolíneas habituales para viajeros desde España.">
 <link rel="canonical" href="https://travelapps-es.vercel.app/cabe-en-cabina/">
 <meta property="og:type" content="website"><meta property="og:title" content="¿Cabe en cabina? | TravelApps"><meta property="og:description" content="Introduce las medidas de tu equipaje y comprueba si encaja en tu aerolínea."><meta property="og:url" content="https://travelapps-es.vercel.app/cabe-en-cabina/"><meta property="og:image" content="https://travelapps-es.vercel.app/assets/travelapps-social.jpg"><meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="../analytics.css"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><script defer src="/_vercel/insights/script.js"></script>
@@ -9,17 +9,17 @@
 </head><body>
 <header class="topbar"><a class="brand" href="../"><img src="../assets/travelapps-logo.svg" alt=""><span>Travel<b>Apps</b></span></a><nav><a href="../">Inicio</a><a href="../guias/">Guías</a></nav></header>
 <main>
-<section class="hero"><p class="eyebrow">✈️ Calculadora gratuita</p><h1>¿Cabe en<br><em>cabina?</em></h1><p>Introduce las medidas de tu mochila o maleta y comprueba si encaja en el límite indicado por tu aerolínea.</p></section>
+<section class="hero"><p class="eyebrow">✈️ Calculadora gratuita</p><h1>¿Cabe en<br><em>cabina?</em></h1><p>Introduce las medidas de tu mochila o maleta y comprueba si encaja en el límite indicado por tu aerolínea.</p><div class="coverage" id="coverage">Cargando aerolíneas…</div></section>
 <section class="calculator-card">
 <form id="bagForm">
 <div class="field"><label for="airline">Aerolínea</label><select id="airline" required></select></div>
 <div class="field"><label for="allowance">Equipaje incluido o contratado</label><select id="allowance" required></select><small id="allowanceNote"></small></div>
 <fieldset><legend>Medidas exteriores, incluyendo ruedas y asas</legend><div class="measure-grid">
-<label><span>Alto</span><div><input id="height" inputmode="decimal" type="number" min="1" max="150" step="0.1" placeholder="55" required><b>cm</b></div></label>
-<label><span>Ancho</span><div><input id="width" inputmode="decimal" type="number" min="1" max="150" step="0.1" placeholder="40" required><b>cm</b></div></label>
-<label><span>Fondo</span><div><input id="depth" inputmode="decimal" type="number" min="1" max="150" step="0.1" placeholder="20" required><b>cm</b></div></label>
+<label><span>Alto</span><div><input id="height" inputmode="decimal" type="number" min="1" max="150" step="0.1" required><b>cm</b></div></label>
+<label><span>Ancho</span><div><input id="width" inputmode="decimal" type="number" min="1" max="150" step="0.1" required><b>cm</b></div></label>
+<label><span>Fondo</span><div><input id="depth" inputmode="decimal" type="number" min="1" max="150" step="0.1" required><b>cm</b></div></label>
 </div></fieldset>
-<div class="field weight-field"><label for="weight">Peso <span>(opcional)</span></label><div class="input-unit"><input id="weight" inputmode="decimal" type="number" min="0" max="50" step="0.1" placeholder="8"><b>kg</b></div></div>
+<div class="field weight-field"><label for="weight">Peso <span>(opcional)</span></label><div class="input-unit"><input id="weight" inputmode="decimal" type="number" min="0" max="50" step="0.1" placeholder="Opcional"><b>kg</b></div></div>
 <button class="main-button" type="submit">Comprobar mi equipaje →</button>
 </form>
 </section>
