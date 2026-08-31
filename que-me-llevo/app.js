@@ -562,15 +562,28 @@ function draw(){
   if(!categoriesInitialized){
     const contextualPriority=[
       "Bebé",
+      "Mascota",
+      "Accesibilidad",
       "Nieve y frío",
+      "Clima tropical",
       "Camping",
+      "Autocaravana o caravana",
+      "Crucero",
+      "Cicloturismo",
+      "Festival",
+      "Evento",
       "Playa",
+      "Vuelo largo",
       "Trabajo",
+      "Ruta en coche",
+      "Trayecto en tren",
       "Durante la etapa",
       "Albergue y descanso",
       "Viaje internacional",
+      "Adolescentes",
       "Equipaje",
-      "Niños"
+      "Niños",
+      "Alojamiento"
     ];
     const featuredCategory=
       contextualPriority.find(category=>cats.includes(category)) ||
