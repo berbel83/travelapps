@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/el-planazo",
+      "destination": "https://elplanazo.vercel.app/el-planazo/"
+    },
+    {
+      "source": "/el-planazo/:path*",
+      "destination": "https://elplanazo.vercel.app/el-planazo/:path*"
+    }
+  ]
+}
