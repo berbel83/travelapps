@@ -778,7 +778,7 @@ function error(t){
 function amazon(n){
   return "https://www.amazon.es/s?k="+
     encodeURIComponent(n)+
-    "&tag=travelapps-21";
+    "&tag=travelapps0b-21";
 }
 
 function label(p){
