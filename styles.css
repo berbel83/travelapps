@@ -182,3 +182,19 @@ body{background:
 @media(max-width:900px){.coming-grid{grid-template-columns:1fr 1fr}.hero:before{right:24px}}
 @media(max-width:620px){.hero:before{inset:14px 9px 46% 9px;border-radius:30px}.coming-grid{grid-template-columns:1fr}.coming-grid .tool-live{min-height:0}.tools-section:before{font-size:82px;top:-30px}.hero h1 em:after{bottom:-5px}}
 @media(prefers-reduced-motion:no-preference){.flow-card,.tool-live,.guide-card,.directory-tool{transition:transform .22s ease,box-shadow .22s ease}.flow-icon,.directory-tool>span{transition:transform .25s ease}.flow-card:hover .flow-icon,.directory-tool:hover>span{transform:rotate(-6deg) scale(1.07)}}
+
+
+/* Contenido útil y compacto de la portada */
+.home-info{padding:58px max(24px,calc((100vw - 1072px)/2));background:#f4eee5;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.home-info-grid{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:12px}
+.home-info article,.home-faq{padding:21px;border:1px solid rgba(11,47,58,.1);border-radius:19px;background:rgba(255,255,255,.76);box-shadow:0 10px 26px rgba(11,47,58,.05)}
+.home-info article>span{display:grid;place-items:center;width:42px;height:42px;margin-bottom:13px;border-radius:13px;background:#e4f2ee;font-size:22px}
+.home-info article:nth-child(2)>span{background:#fff0e6}
+.home-info h3{margin:0 0 7px;font-family:Georgia,serif;font-size:21px;font-weight:500}
+.home-info article p,.home-faq p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}
+.home-faq{padding:10px 18px}
+.home-faq details+details{border-top:1px solid var(--line)}
+.home-faq summary{padding:12px 0;cursor:pointer;font-size:13px;font-weight:850}
+.home-faq details p{padding:0 0 13px}
+@media(max-width:900px){.home-info-grid{grid-template-columns:1fr 1fr}.home-faq{grid-column:1/-1}}
+@media(max-width:620px){.home-info{padding:42px 18px}.home-info-grid{grid-template-columns:1fr}.home-faq{grid-column:auto}.home-info article{padding:18px}}
