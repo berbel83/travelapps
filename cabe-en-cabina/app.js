@@ -14,7 +14,7 @@ function fillOptions(){
 function updateNote(){const o=currentOption();$("#allowanceNote").textContent=o?.note||""}
 $("#allowance").addEventListener("change",updateNote);
 function fmtDate(v){const [y,m,d]=v.split("-");return `${d}/${m}/${y}`}
-function amazon(q){return "https://www.amazon.es/s?k="+encodeURIComponent(q)+"&tag=travelapps-21"}
+function amazon(q){return "https://www.amazon.es/s?k="+encodeURIComponent(q)+"&tag=travelapps0b-21"}
 function calculate(e){
  e.preventDefault(); const a=currentAirline(),o=currentOption();
  const entered=[$("#height").valueAsNumber,$("#width").valueAsNumber,$("#depth").valueAsNumber].sort((x,y)=>y-x);
