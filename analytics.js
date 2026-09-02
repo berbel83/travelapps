@@ -1,5 +1,6 @@
 const GA_ID="G-T1MEJND383";
 const CONSENT_KEY="travelapps_analytics_consent";
+const AMAZON_TRACKING_ID="travelapps0b-21";
 
 function loadAnalytics(){
   if(window.__travelAppsAnalyticsLoaded)return;
@@ -50,7 +51,21 @@ function showConsent(){
   document.getElementById("rejectAnalytics").onclick=()=>setAnalyticsConsent("rejected");
 }
 
+function normalizeAmazonTrackingLinks(){
+  document.querySelectorAll('a[href*="amazon.es"]').forEach(link=>{
+    try{
+      const url=new URL(link.href);
+      url.searchParams.set("tag",AMAZON_TRACKING_ID);
+      link.href=url.toString();
+    }catch(error){
+      console.warn("No se pudo normalizar un enlace de Amazon",error);
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded",()=>{
+  normalizeAmazonTrackingLinks();
+
   if(localStorage.getItem(CONSENT_KEY)==="accepted")loadAnalytics();
   else showConsent();
 
