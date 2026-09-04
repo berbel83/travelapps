@@ -255,3 +255,66 @@ document.addEventListener("DOMContentLoaded",()=>{
     }
   });
 });
+
+const BOOKING_AFFILIATE_BASE_URL="https://www.jdoqocy.com/click-101874493-12180791";
+
+function bookingAffiliateUrl(sid){
+  const url=new URL(BOOKING_AFFILIATE_BASE_URL);
+  if(sid)url.searchParams.set("sid",sid);
+  return url.toString();
+}
+
+function addBookingAffiliateOffers(){
+  const path=location.pathname;
+
+  if(path.includes("/guias/")){
+    const guideSlug=path.replace(/\/+$/,"").split("/").pop();
+    if(guideSlug&&guideSlug!=="guias"&&!document.querySelector(".booking-affiliate-cta")){
+      const bookingCta=document.createElement("section");
+      bookingCta.className="guide-cta booking-affiliate-cta";
+      bookingCta.innerHTML=`
+        <p class="eyebrow">🏨 Alojamiento</p>
+        <h2>¿Todavía te falta dónde dormir?</h2>
+        <p>Si aún no has reservado alojamiento, puedes comparar opciones en Booking.com antes de cerrar el viaje.</p>
+        <a class="primary-button" data-booking-source="guide_${guideSlug}" href="${bookingAffiliateUrl(`guide_${guideSlug}`)}" target="_blank" rel="sponsored noopener noreferrer">Buscar alojamiento en Booking.com →</a>
+        <p class="affiliate-note">Enlace de afiliado: si reservas desde aquí, TravelApps puede recibir una comisión, sin coste adicional para ti.</p>
+      `;
+      const relatedNav=document.querySelector(".related-guides");
+      const toolsCta=document.querySelector(".guide-tools-cta");
+      if(relatedNav)relatedNav.insertAdjacentElement("beforebegin",bookingCta);
+      else if(toolsCta)toolsCta.insertAdjacentElement("beforebegin",bookingCta);
+      else document.querySelector(".guide-page")?.appendChild(bookingCta);
+    }
+  }
+
+  if(path.includes("/que-me-llevo/")){
+    const result=document.querySelector("#result");
+    if(result&&!result.querySelector(".booking-affiliate-card")){
+      const bookingCard=document.createElement("div");
+      bookingCard.className="card booking-affiliate-card";
+      bookingCard.innerHTML=`
+        <div class="pill">🏨 Alojamiento</div>
+        <h3>¿Te falta reservar alojamiento?</h3>
+        <p>Cuando tengas el equipaje claro, puedes comparar alojamientos para tu viaje en Booking.com.</p>
+        <a class="main hero-action" data-booking-source="que_me_llevo_result" href="${bookingAffiliateUrl("que_me_llevo_result")}" target="_blank" rel="sponsored noopener noreferrer">Buscar alojamiento en Booking.com →</a>
+        <p class="legal">Enlace de afiliado: si reservas desde aquí, TravelApps puede recibir una comisión, sin coste adicional para ti.</p>
+      `;
+      const actions=result.querySelector(".actions");
+      if(actions)actions.insertAdjacentElement("beforebegin",bookingCard);
+      else result.appendChild(bookingCard);
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  addBookingAffiliateOffers();
+
+  document.addEventListener("click",event=>{
+    const bookingLink=event.target.closest("[data-booking-source]");
+    if(!bookingLink)return;
+    trackTravelApps("booking_affiliate_click",{
+      link_source:bookingLink.dataset.bookingSource||"unknown",
+      page_path:location.pathname
+    });
+  });
+});
