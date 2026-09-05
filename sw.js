@@ -1,13 +1,13 @@
-const CACHE_NAME = "travelapps-pwa-v2";
+const CACHE_NAME = "travelapps-pwa-v3";
 const APP_SHELL = [
   "/",
   "/styles.css",
   "/analytics.css",
   "/analytics.js",
   "/assets/travelapps-logo.svg",
-  "/pwa/icon-192.png",
-  "/pwa/icon-512.png",
-  "/pwa/icon-maskable-512.png"
+  "/pwa/icon-192-v2.png",
+  "/pwa/icon-512-v2.png",
+  "/pwa/icon-maskable-512-v2.png"
 ];
 
 self.addEventListener("install", event => {
