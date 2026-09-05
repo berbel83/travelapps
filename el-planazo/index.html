@@ -11,15 +11,28 @@
   <meta property="og:title" content="El Planazo | Tu viaje organizado">
   <meta property="og:description" content="Crea itinerarios personalizados para tus planes y viajes.">
   <meta property="og:url" content="https://travelapps-es.vercel.app/el-planazo/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <style>
     *{box-sizing:border-box}
     html,body{width:100%;height:100%;margin:0;background:#fff8f2;overflow:hidden}
-    iframe{display:block;width:100%;height:100%;border:0;background:#fff8f2}
+    body{display:flex;flex-direction:column;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    .planazo-topbar{height:56px;flex:0 0 56px;display:flex;align-items:center;padding:0 16px;border-bottom:1px solid rgba(23,57,71,.1);background:#fffaf5;z-index:2}
+    .planazo-brand{display:inline-flex;align-items:center;gap:10px;color:#173947;text-decoration:none;font-size:15px;font-weight:750}
+    .planazo-brand img{width:34px;height:34px;display:block}
+    .planazo-brand b{font-weight:900}
+    .planazo-brand:focus-visible{outline:3px solid rgba(239,124,69,.3);outline-offset:4px;border-radius:10px}
+    iframe{display:block;width:100%;flex:1 1 auto;min-height:0;border:0;background:#fff8f2}
     .fallback{position:fixed;inset:auto 16px 16px;z-index:-1;text-align:center;font:14px system-ui;color:#173947}
     .seo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   </style>
 </head>
 <body>
+  <header class="planazo-topbar">
+    <a class="planazo-brand" href="../" aria-label="Volver al inicio de TravelApps">
+      <img src="../assets/travelapps-logo.svg" alt="">
+      <span>Travel<b>Apps</b></span>
+    </a>
+  </header>
   <main class="seo">
     <h1>El Planazo</h1>
     <p>Crea itinerarios personalizados para un día, explora lugares cercanos o planifica un viaje completo con TravelApps.</p>
