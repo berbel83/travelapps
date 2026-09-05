@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.berbel.travelapps",
+    "sha256_cert_fingerprints": [
+      "12:66:67:5B:87:3A:13:41:54:5F:75:93:D1:E6:3A:50:E0:B5:FE:1D:71:A3:01:80:F1:7B:B1:0B:DC:AB:B0:93"
+    ]
+  }
+}]
