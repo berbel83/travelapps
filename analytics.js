@@ -442,3 +442,31 @@ function upgradeBookingAffiliateOffers(){
 document.addEventListener("DOMContentLoaded",()=>{
   requestAnimationFrame(upgradeBookingAffiliateOffers);
 });
+
+function addGuideBreadcrumbStructuredData(){
+  const path=location.pathname.replace(/\/+$/,"");
+  if(!path.startsWith("/guias/")||path==="/guias")return;
+  if(document.querySelector('script[data-travelapps-breadcrumbs="true"]'))return;
+
+  const canonical=document.querySelector('link[rel="canonical"]')?.href||location.href.split("#")[0].split("?")[0];
+  const pageName=document.querySelector(".guide-page h1")?.textContent?.replace(/\s+/g," ").trim()||document.title.replace(/\s*\|\s*TravelApps\s*$/i,"").trim();
+  if(!pageName)return;
+
+  const data={
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"TravelApps","item":"https://travelapps-es.vercel.app/"},
+      {"@type":"ListItem","position":2,"name":"Guías","item":"https://travelapps-es.vercel.app/guias/"},
+      {"@type":"ListItem","position":3,"name":pageName,"item":canonical}
+    ]
+  };
+
+  const script=document.createElement("script");
+  script.type="application/ld+json";
+  script.dataset.travelappsBreadcrumbs="true";
+  script.textContent=JSON.stringify(data);
+  document.head.appendChild(script);
+}
+
+document.addEventListener("DOMContentLoaded",addGuideBreadcrumbStructuredData);
