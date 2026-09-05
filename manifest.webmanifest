@@ -1,0 +1,56 @@
+{
+  "id": "/",
+  "name": "TravelApps",
+  "short_name": "TravelApps",
+  "description": "Herramientas gratuitas para planificar viajes, preparar equipaje y resolver dudas antes de salir.",
+  "lang": "es",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "background_color": "#f7f4ef",
+  "theme_color": "#132b38",
+  "orientation": "any",
+  "categories": ["travel", "utilities", "lifestyle"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/pwa/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Crear mi equipaje",
+      "short_name": "Equipaje",
+      "url": "/que-me-llevo/?source=pwa_shortcut",
+      "icons": [{"src": "/pwa/icon-192.png", "sizes": "192x192", "type": "image/png"}]
+    },
+    {
+      "name": "Comprobar equipaje de cabina",
+      "short_name": "Cabina",
+      "url": "/cabe-en-cabina/?source=pwa_shortcut",
+      "icons": [{"src": "/pwa/icon-192.png", "sizes": "192x192", "type": "image/png"}]
+    },
+    {
+      "name": "Comprobar adaptador",
+      "short_name": "Adaptador",
+      "url": "/necesito-adaptador/?source=pwa_shortcut",
+      "icons": [{"src": "/pwa/icon-192.png", "sizes": "192x192", "type": "image/png"}]
+    }
+  ]
+}
